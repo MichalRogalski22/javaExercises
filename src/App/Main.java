@@ -2,6 +2,8 @@ package App;
 
 import jdk.jshell.execution.Util;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Company company = Utils.initData();
@@ -21,7 +23,10 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    Utils.printAnswer(company.getEmployees().toString());
+                    List<Employee> employees = company.getEmployees();
+                    for(Employee employee : employees) {
+                        Utils.printAnswer(employee.toString());
+                    }
                     break;
                 case 2:
                     String name = Utils.inputString("Podaj imię: ");

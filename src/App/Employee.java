@@ -15,4 +15,8 @@ public class Employee extends Person {
     public void setDepartament(Departament departament) {
         this.departament = departament;
     }
+
+    public String toString() {
+        return super.toString() + " \nDepartament: " + departament.toString();
+    }
 }
