@@ -77,7 +77,12 @@ public class Utils {
             printAnswer("Podano błędną wartość, spróbuj jeszcze raz");
             return inputInt(message);
         }
+    }
 
+    static Address addressInput() {
+        String city = Utils.inputString("Podaj miasto: ");
+        String street = Utils.inputString("Podaj ulicę: ");
+        return new Address(city, street);
     }
 
     private static int getValue(int value) {

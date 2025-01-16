@@ -29,9 +29,8 @@ public class Main {
                 case 2:
                     String name = Utils.inputString("Podaj imię: ");
                     String surname = Utils.inputString("Podaj nazwisko: ");
-                    String city = Utils.inputString("Podaj miasto: ");
-                    String street = Utils.inputString("Podaj ulicę: ");
-                    company.addEmployee(name, surname, new Address(city, street));
+                    Address address = Utils.addressInput();
+                    company.addEmployee(name, surname, address);
                     Utils.printAnswer("Dodano pomyślnie pracownika: %s %s".formatted(name, surname));
                     break;
                 case 3:
