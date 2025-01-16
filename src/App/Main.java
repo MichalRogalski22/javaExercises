@@ -23,10 +23,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    List<Employee> employees = company.getEmployees();
-                    for(Employee employee : employees) {
-                        Utils.printAnswer(employee.toString());
-                    }
+                    company.displayEmployees(false);
                     break;
                 case 2:
                     String name = Utils.inputString("Podaj imię: ");
@@ -37,7 +34,8 @@ public class Main {
                     Utils.printAnswer("Dodano pomyślnie pracownika: %s %s".formatted(name, surname));
                     break;
                 case 3:
-                    //code here...
+                    company.displayEmployees(true);
+
                     break;
                 case 0:
                     Utils.printAnswer("Do zobaczenia");

@@ -41,4 +41,18 @@ public class Company {
         employees.add(employee);
     }
 
+    public void displayEmployees(Boolean withNumeration) {
+        int numeration = 1;
+        String numerationString = numeration + " - ";
+
+        List<Employee> employees = this.employees;
+        for(Employee employee : employees) {
+            String emplyeeString = employee.toString();
+            if(withNumeration) {
+                emplyeeString = numerationString + emplyeeString + "\n";
+            }
+            System.out.println(emplyeeString);
+        }
+    }
+
 }
