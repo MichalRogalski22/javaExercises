@@ -24,4 +24,8 @@ public class Address {
     public void setStreet(String street) {
         this.street = street;
     }
+
+    public String toString() {
+        return "City: " + city + ", Street: " + street;
+    }
 }

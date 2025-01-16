@@ -4,7 +4,7 @@ public class Employee extends Person {
     private Departament departament;
 
     public Employee(Person person, Departament departament) {
-        super(person.getName(), person.getSurname());
+        super(person.getName(), person.getSurname(), person.getAddress());
         this.departament = departament;
     }
 

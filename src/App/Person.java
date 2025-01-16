@@ -5,9 +5,10 @@ public class Person {
     private String surname;
     private Address address;
 
-    public Person(String name, String surname) {
+    public Person(String name, String surname, Address address) {
         this.name = name;
         this.surname = surname;
+        this.address = address;
     }
 
     public String getName() {

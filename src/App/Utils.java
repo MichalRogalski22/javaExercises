@@ -6,16 +6,16 @@ import java.util.Scanner;
 
 public class Utils {
     static Company initData() {
-        Person firstPerson = new Person("Jan", "Testowy");
-        Person secondPerson = new Person("Kazimierz", "Przykładowy");
-        Person thirdPerson = new Person("Maria", "Demo");
+        Person firstPerson = new Person("Jan", "Testowy", new Address("Warszawa", "Przykładowa 12"));
+        Person secondPerson = new Person("Kazimierz", "Przykładowy",  new Address("Warszawa", "Grzybowa 6"));
+        Person thirdPerson = new Person("Maria", "Demo",  new Address("Warszawa", "Pieczarkowa 4"));
+
 
         Employee firstEmployee = new Employee(firstPerson, Departament.SALES);
         Employee secondEmployee = new Employee(secondPerson, Departament.ADMINISTRATION);
         Employee thirdEmployee = new Employee(thirdPerson, Departament.FINANCE);
 
         Company company = new Company("Super Firma");
-
         List<Employee> employees = company.getEmployees();
         employees.add(firstEmployee);
         employees.add(secondEmployee);

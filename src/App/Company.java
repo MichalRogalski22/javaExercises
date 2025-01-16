@@ -34,8 +34,8 @@ public class Company {
         return employees;
     }
 
-    public void addEmployee(String name, String surname) {
-        Person person = new Person(name, surname);
+    public void addEmployee(String name, String surname, Address address) {
+        Person person = new Person(name, surname, address);
         Employee employee = new Employee(person, Departament.ADMINISTRATION);
 
         employees.add(employee);
