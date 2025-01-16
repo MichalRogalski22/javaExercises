@@ -17,6 +17,6 @@ public class Employee extends Person {
     }
 
     public String toString() {
-        return super.toString() + " \nDepartament: " + departament.toString();
+        return super.toString() + " \nDepartament: " + departament.toString() + "\n";
     }
 }

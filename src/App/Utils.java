@@ -49,8 +49,38 @@ public class Utils {
     }
 
     static String inputString(String message) {
-        Scanner input = new Scanner(System.in);
-        System.out.print(message);
-        return input.nextLine();
+        try {
+            Scanner input = new Scanner(System.in);
+            System.out.print(message);
+            return input.nextLine();
+        } catch (InputMismatchException e) {
+            printAnswer("Podano błędną wartość, spróbuj jeszcze raz");
+            return inputString(message);
+        }
+    }
+
+    static int indexInput(String message, int listLength, Boolean hasCancellation) {
+        try {
+            Scanner input = new Scanner(System.in);
+            if (hasCancellation) {
+                System.out.println("0 - Anuluj");
+            }
+            System.out.print(message);
+            int value = input.nextInt();
+            System.out.println(value);
+            if (value <= listLength && value >= 0) {
+                return value;
+            }
+            printAnswer("Podano błędną wartość, spróbuj jeszcze raz");
+            return indexInput(message, listLength, hasCancellation);
+        } catch (InputMismatchException e) {
+            printAnswer("Podano błędną wartość, spróbuj jeszcze raz");
+            return inputInt(message);
+        }
+
+    }
+
+    private static int getValue(int value) {
+        return value;
     }
 }

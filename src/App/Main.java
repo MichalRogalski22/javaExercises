@@ -24,6 +24,7 @@ public class Main {
             switch (choice) {
                 case 1:
                     company.displayEmployees(false);
+                    System.out.println("\n");
                     break;
                 case 2:
                     String name = Utils.inputString("Podaj imię: ");
@@ -35,7 +36,11 @@ public class Main {
                     break;
                 case 3:
                     company.displayEmployees(true);
-
+                    int employeeDeletionChoice = Utils.indexInput("Podaj id pracownika do usunięcia:", company.getEmployees().size(), true);
+                    if (employeeDeletionChoice == 0) {
+                        break;
+                    }
+                    company.removeEmployee(company.getEmployee(employeeDeletionChoice -1));
                     break;
                 case 0:
                     Utils.printAnswer("Do zobaczenia");
