@@ -9,10 +9,12 @@ public class Main {
         while (!done) {
 
             System.out.println("Dostępne operacje:");
-            System.out.println("1 - Wyświetl pracowników");
-            System.out.println("2 - Dodaj pracownika");
-            System.out.println("3 - Zwolnij pracownika");
-            System.out.println("4 - Edycja pracownika");
+            System.out.println("1 - Wyświetl firmę");
+            System.out.println("2 - Wyświetl pracowników");
+            System.out.println("3 - Dodaj pracownika");
+            System.out.println("4 - Zwolnij pracownika");
+            System.out.println("5 - Edycja pracownika");
+            System.out.println("6 - Edycja firmy");
             System.out.println("0 - Zakończ program");
             System.out.println();
 
@@ -20,11 +22,15 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    System.out.println(company);
+                    System.out.println("\n");
+                    break;
+                case 2:
                     company.displayEmployees(false);
                     System.out.println("\n");
                     break;
 
-                case 2:
+                case 3:
                     String name = Utils.inputString("Podaj imię: ");
                     String surname = Utils.inputString("Podaj nazwisko: ");
                     Address address = Utils.addressInput();
@@ -32,7 +38,7 @@ public class Main {
                     Utils.printAnswer("Dodano pomyślnie pracownika: %s %s".formatted(name, surname));
                     break;
 
-                case 3:
+                case 4:
                     company.displayEmployees(true);
                     int employeeDeletionChoice = Utils.indexInput("Podaj id pracownika do usunięcia:", company.getEmployees().size(), true);
                     if (employeeDeletionChoice == 0) {
@@ -41,7 +47,7 @@ public class Main {
                     company.removeEmployee(company.getEmployee(employeeDeletionChoice -1));
                     break;
 
-                case 4:
+                case 5:
                     company.displayEmployees(true);
                     int employeeModificationChoice = Utils.indexInput("Podaj id pracownika do zmiany:", company.getEmployees().size(), true);
                     if (employeeModificationChoice == 0) {
@@ -84,7 +90,24 @@ public class Main {
                             employeeToModify.setDepartament(selectedDepartment);
                             break;
                         default:
+                            Utils.printAnswer("Błędny wybór, powrót do menu głównego");
                             break;
+                    }
+                    break;
+                case 6:
+                    System.out.println("Dostępne operacje:");
+                    System.out.println("1 - Zmień nazwę");
+                    System.out.println("2 - Zmień adres");
+                    int companyModificationChoice = Utils.inputInt("Wybierz operację: ");
+
+                    if (companyModificationChoice == 1) {
+                        String newCompanyName = Utils.inputString("Podaj nazwisko: ");
+                        company.setName(newCompanyName);
+                    } else if (companyModificationChoice == 2) {
+                        Address newAddress = Utils.addressInput();
+                        company.setAddress(newAddress);
+                    } else {
+                        Utils.printAnswer("Błędny wybór, powrót do menu głównego");
                     }
                     break;
                 case 0:

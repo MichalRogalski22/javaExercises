@@ -34,6 +34,10 @@ public class Company {
         return employees;
     }
 
+    public String toString() {
+        return "Name: " + this.name + ", Address: " + this.address.toString();
+    }
+
     public Employee getEmployee(int index) {
         return employees.get(index);
     }
