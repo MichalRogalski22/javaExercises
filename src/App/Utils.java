@@ -75,7 +75,7 @@ public class Utils {
             return indexInput(message, listLength, hasCancellation);
         } catch (InputMismatchException e) {
             printAnswer("Podano błędną wartość, spróbuj jeszcze raz");
-            return inputInt(message);
+            return indexInput(message, listLength, hasCancellation);
         }
     }
 

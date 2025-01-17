@@ -35,6 +35,10 @@ public class Person {
         this.address = new Address(city, street);
     }
 
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return name + " " + surname + "\n" + address.toString();
